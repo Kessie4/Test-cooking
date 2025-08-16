@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "reserve": {
+      "type": "reservation-form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "reserve"
+  ]
+}

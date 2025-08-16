@@ -1,0 +1,50 @@
+{% schema %}
+{
+  "name": "Chef Hero",
+  "settings": [
+    {"type":"text","id":"kicker","label":"Kicker","default":"Privatkoch • Zürich — Bodensee"},
+    {"type":"text","id":"title","label":"Titel","default":"Moderne Eleganz, warme ivorische Note"},
+    {"type":"textarea","id":"lead","label":"Intro","default":"Französische Präzision trifft die Seele Abidjans. Private Dinner zu Hause für 2–10 Personen."},
+    {"type":"image_picker","id":"portrait","label":"Hauptbild"},
+    {"type":"text","id":"cta_label","label":"Haupt-Button","default":"Verfügbarkeit prüfen"},
+    {"type":"url","id":"cta_url","label":"Link Button","default":"https://wa.me/41766205010"},
+    {"type":"text","id":"cta2_label","label":"Sekundär-Button","default":"Menüs ansehen"},
+    {"type":"url","id":"cta2_url","label":"Link Sekundär","default":"#menus"}
+  ],
+  "blocks": [
+    {"type":"chip","name":"Pill","settings":[{"type":"text","id":"text","label":"Text","default":"Zu Hause"},{"type":"text","id":"small","label":"Untertext","default":"2–10 Pers."}]}
+  ],
+  "max_blocks": 6,
+  "presets": [{"name":"Chef Hero"}]
+}
+{% endschema %}
+
+<section class="hero-chef">
+  <div class="container-chef" style="display:grid;grid-template-columns:1.2fr .9fr;gap:28px;align-items:start">
+    <div>
+      {% if section.settings.kicker != blank %}<div class="kicker">{{ section.settings.kicker }}</div>{% endif %}
+      <h1 class="title">{{ section.settings.title }}</h1>
+      {% if section.settings.lead != blank %}<p class="lead">{{ section.settings.lead }}</p>{% endif %}
+      <div class="meta">
+        {% for block in section.blocks %}
+          <div class="chip">{{ block.settings.text }}{% if block.settings.small != blank %} <small>{{ block.settings.small }}</small>{% endif %}</div>
+        {% endfor %}
+      </div>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        {% if section.settings.cta_label != blank %}
+          <a class="btn-chef" href="{{ section.settings.cta_url }}">{{ section.settings.cta_label }}</a>
+        {% endif %}
+        {% if section.settings.cta2_label != blank %}
+          <a class="btn-chef btn-ghost" href="{{ section.settings.cta2_url }}">{{ section.settings.cta2_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero-photo" style="border:1px solid var(--line);border-radius:12px;overflow:hidden">
+      {% if section.settings.portrait %}
+        <img src="{{ section.settings.portrait | img_url: '1100x' }}" alt="Portrait / Ambiente" loading="lazy">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
+  </div>
+</section>

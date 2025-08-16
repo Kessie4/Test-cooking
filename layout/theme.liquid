@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html lang="{{ request.locale.iso_code | default: 'de' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}{% if current_page != 1 %} – {{ 'general.pagination.page' | t }} {{ current_page }}{% endif %} – {{ shop.name }}</title>
+  {{ content_for_header }}
+  <link href="{{ 'theme-chef.css' | asset_url }}" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Helvetica Neue',sans-serif;background:#ffffff;color:#0f0f0f;line-height:1.6}
+    .container-chef{max-width:1180px;margin-inline:auto;padding-inline:20px}
+    header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #ececec}
+    .site-bar{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+    .brand{font-weight:800;letter-spacing:.02em}
+    .nav a{margin-left:14px;text-decoration:none;color:inherit}
+    a{color:inherit}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="container-chef site-bar">
+      <div class="brand">{{ shop.name }}</div>
+      <nav class="nav">
+        <a href="/">{{ 'nav.home' | t }}</a>
+        <a href="/pages/reserver">{{ 'nav.reserve' | t }}</a>
+      </nav>
+    </div>
+  </header>
+  <main role="main">
+    {{ content_for_layout }}
+  </main>
+  <footer style="border-top:1px solid #ececec;padding:28px 20px;text-align:center;color:#6a6a6a">
+    <div class="container-chef">
+      <small>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }} — {{ 'footer.tagline' | t }}</small>
+    </div>
+  </footer>
+</body>
+</html>

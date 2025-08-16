@@ -1,0 +1,161 @@
+{
+  "sections": {
+    "hero": {
+      "type": "chef-hero",
+      "settings": {},
+      "blocks": {
+        "chip1": {
+          "type": "chip",
+          "settings": {
+            "text": "Zu Hause",
+            "small": "2–10 Pers."
+          }
+        },
+        "chip2": {
+          "type": "chip",
+          "settings": {
+            "text": "Ernährungen",
+            "small": "vegi / glutenfrei"
+          }
+        },
+        "chip3": {
+          "type": "chip",
+          "settings": {
+            "text": "Regionen",
+            "small": "Zürich • Greifensee • Bodensee"
+          }
+        }
+      },
+      "block_order": [
+        "chip1",
+        "chip2",
+        "chip3"
+      ]
+    },
+    "gallery": {
+      "type": "chef-gallery",
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "facts": {
+      "type": "chef-facts",
+      "settings": {},
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "heading": "Format & Kapazität",
+            "line1": "2–10 Personen (bis 14 auf Anfrage)",
+            "line2": "Am Tisch oder Family-Style"
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "heading": "Küche & Produkte",
+            "line1": "Ivorische × französische Fusion, saisonal",
+            "line2": "Vegetarisch & glutenfrei möglich"
+          }
+        },
+        "f3": {
+          "type": "fact",
+          "settings": {
+            "heading": "Technik & Logistik",
+            "line1": "Benötigt: Ofen, Herd, Kühlschrank",
+            "line2": "Regionen: Zürich, Greifensee, Bodensee"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    "menus": {
+      "type": "chef-menus",
+      "settings": {},
+      "blocks": {
+        "m1": {
+          "type": "menu",
+          "settings": {
+            "name": "Entdecker-Menü",
+            "price": "CHF 50",
+            "note": "Vorspeise, Hauptgang, Dessert — Balance aus Tradition & Fusion."
+          }
+        },
+        "m2": {
+          "type": "menu",
+          "settings": {
+            "name": "Geselliges Menü",
+            "price": "CHF 65",
+            "note": "3 Gänge + Willkommenscocktail — großzügige Portionen."
+          }
+        },
+        "m3": {
+          "type": "menu",
+          "settings": {
+            "name": "Signature-Menü",
+            "price": "CHF 75",
+            "note": "Texturen, Gewürze, ausgearbeitete Saucen — die Essenz meiner Küche."
+          }
+        }
+      },
+      "block_order": [
+        "m1",
+        "m2",
+        "m3"
+      ]
+    },
+    "testimonial": {
+      "type": "chef-testimonial",
+      "settings": {}
+    },
+    "faq": {
+      "type": "chef-faq",
+      "settings": {},
+      "blocks": {
+        "q1": {
+          "type": "qa",
+          "settings": {
+            "q": "Wie reserviere ich?",
+            "a": "Per WhatsApp oder E‑Mail mit Datum, Ort, Personenanzahl, Präferenzen. Antwort innerhalb von 24h."
+          }
+        },
+        "q2": {
+          "type": "qa",
+          "settings": {
+            "q": "Ernährungen & Allergien?",
+            "a": "Anpassungen möglich, bitte im Voraus angeben."
+          }
+        },
+        "q3": {
+          "type": "qa",
+          "settings": {
+            "q": "Geschirr & Material?",
+            "a": "Ich nutze Ihr Geschirr. Miete über Partner möglich."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3"
+      ]
+    },
+    "cta": {
+      "type": "chef-cta",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "gallery",
+    "facts",
+    "menus",
+    "testimonial",
+    "faq",
+    "cta"
+  ]
+}
