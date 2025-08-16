@@ -1,0 +1,17 @@
+{% schema %}
+{
+  "name":"CTA",
+  "settings":[{"type":"text","id":"title","label":"Titel","default":"Lust auf ein unvergessliches Privat-Dinner?"},{"type":"text","id":"btn1","label":"Hauptbutton","default":"Über WhatsApp reservieren"},{"type":"url","id":"btn1_url","label":"Link Hauptbutton","default":"https://wa.me/41766205010"},{"type":"text","id":"btn2","label":"Sekundärbutton","default":"E‑Mail schreiben"},{"type":"url","id":"btn2_url","label":"Link Sekundärbutton","default":"mailto:brou.boris@gmail.com"}],
+  "presets":[{"name":"CTA"}]
+}
+{% endschema %}
+
+<section class="section-chef">
+  <div class="container-chef cta-band-chef">
+    <strong>{{ section.settings.title }}</strong>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn-chef" href="{{ section.settings.btn1_url }}">{{ section.settings.btn1 }}</a>
+      <a class="btn-chef btn-ghost" href="{{ section.settings.btn2_url }}">{{ section.settings.btn2 }}</a>
+    </div>
+  </div>
+</section>

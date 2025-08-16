@@ -1,0 +1,16 @@
+{% schema %}
+{
+  "name":"Kundenstimme",
+  "settings":[{"type":"textarea","id":"quote","label":"Zitat","default":"Ein unvergesslicher Abend. Saucen, Gargrade und die ivorische Note haben alle begeistert."},{"type":"text","id":"author","label":"Autor","default":"— Claire M., Zürich"}],
+  "presets":[{"name":"Kundenstimme"}]
+}
+{% endschema %}
+
+<section class="section-chef">
+  <div class="container-chef">
+    <div class="quote-chef">
+      <p>« {{ section.settings.quote }} »</p>
+      <small>{{ section.settings.author }}</small>
+    </div>
+  </div>
+</section>

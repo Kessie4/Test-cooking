@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Boris Chef — Einstellungen",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Akzentfarbe",
+        "default": "#C8A95B"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_link",
+        "label": "WhatsApp Link",
+        "default": "https://wa.me/41766205010"
+      }
+    ]
+  }
+]

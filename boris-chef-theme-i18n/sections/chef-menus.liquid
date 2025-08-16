@@ -1,0 +1,29 @@
+{% schema %}
+{
+  "name":"Menüs",
+  "settings":[{"type":"text","id":"title","label":"Titel","default":"Menüs"},{"type":"text","id":"subtitle","label":"Untertitel","default":"Richtpreise pro Person. Anpassungen je nach Saison & Präferenzen."}],
+  "blocks":[{"type":"menu","name":"Karte","settings":[{"type":"image_picker","id":"img","label":"Bild"},{"type":"text","id":"name","label":"Name","default":"Entdecker-Menü"},{"type":"text","id":"price","label":"Preis","default":"CHF 50"},{"type":"textarea","id":"note","label":"Notiz","default":"Vorspeise, Hauptgang, Dessert — Balance aus Tradition & Fusion."}]}],
+  "presets":[{"name":"Menüs"}]
+}
+{% endschema %}
+
+<section id="menus" class="section-chef">
+  <div class="container-chef">
+    <h2>{{ section.settings.title }}</h2>
+    {% if section.settings.subtitle != blank %}<p class="sub">{{ section.settings.subtitle }}</p>{% endif %}
+    <div class="menu-grid-chef">
+      {% for block in section.blocks %}
+        <article class="card">
+          {% if block.settings.img %}
+            <img src="{{ block.settings.img | img_url: '900x' }}" alt="{{ block.settings.name | escape }}" loading="lazy"/>
+          {% else %}{{ 'image' | placeholder_svg_tag }}{% endif %}
+          <div class="body">
+            <h3>{{ block.settings.name }}</h3>
+            <p class="price">{{ block.settings.price }}</p>
+            {% if block.settings.note != blank %}<p class="sub">{{ block.settings.note }}</p>{% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

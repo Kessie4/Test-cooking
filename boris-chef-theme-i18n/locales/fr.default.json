@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "reserve": "Réserver"
+  },
+  "footer": {
+    "tagline": "Chef privé • Zürich"
+  },
+  "general": {
+    "pagination": {
+      "page": "Page"
+    }
+  },
+  "reserve": {
+    "form": {
+      "name": "Nom et prénom",
+      "email": "E‑mail",
+      "phone": "Téléphone",
+      "guests": "Nombre de convives",
+      "date": "Date souhaitée",
+      "time": "Heure souhaitée",
+      "message": "Message",
+      "placeholder": "Adresse, préférences (végé, sans gluten, halal), ambiance souhaitée…",
+      "submit": "Envoyer la demande",
+      "whatsapp": "Réserver via WhatsApp",
+      "success": "Merci ! Votre demande a été envoyée.",
+      "error": "Oups, une erreur est survenue."
+    },
+    "sidebar": {
+      "title": "Contact direct",
+      "areas": "Zones : Zürich, Greifensee, Bodensee"
+    }
+  }
+}

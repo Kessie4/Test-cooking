@@ -1,0 +1,32 @@
+{% schema %}
+{
+  "name":"FAQ",
+  "settings":[{"type":"text","id":"title","label":"Titel","default":"FAQs"}],
+  "blocks":[{"type":"qa","name":"Frage/Antwort","settings":[{"type":"text","id":"q","label":"Frage","default":"Wie reserviere ich?"},{"type":"textarea","id":"a","label":"Antwort","default":"Per WhatsApp oder E‑Mail mit Datum, Ort, Personenanzahl, Präferenzen. Antwort innerhalb von 24h."}]}],
+  "presets":[{"name":"FAQ"}]
+}
+{% endschema %}
+
+<section id="faq" class="section-chef">
+  <div class="container-chef columns-chef">
+    <div>
+      <h2>{{ section.settings.title }}</h2>
+      <div class="faq-chef">
+        {% for block in section.blocks %}
+          <details>
+            <summary>{{ block.settings.q }}</summary>
+            <p>{{ block.settings.a }}</p>
+          </details>
+        {% endfor %}
+      </div>
+    </div>
+    <aside class="sticky-chef">
+      <div class="panel-chef">
+        <strong>Kontakt</strong>
+        <p style="margin:.4rem 0">📞 <a href="tel:+41766205010">+41 76 620 50 10</a></p>
+        <p style="margin:.4rem 0">📧 <a href="mailto:brou.boris@gmail.com">brou.boris@gmail.com</a></p>
+        <a class="btn-chef" href="https://wa.me/41766205010">Über WhatsApp schreiben</a>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+{% schema %}
+{
+  "name":"Eckdaten",
+  "settings":[{"type":"text","id":"title","label":"Titel","default":"Eckdaten"},{"type":"text","id":"subtitle","label":"Untertitel","default":"Wichtige Informationen für Ihr Dinner."}],
+  "blocks":[{"type":"fact","name":"Info-Block","settings":[{"type":"text","id":"heading","label":"Überschrift","default":"Format & Kapazität"},{"type":"textarea","id":"line1","label":"Zeile 1","default":"2–10 Personen (bis 14 auf Anfrage)"},{"type":"textarea","id":"line2","label":"Zeile 2","default":"Am Tisch oder Family-Style"}]}],
+  "presets":[{"name":"Eckdaten"}]
+}
+{% endschema %}
+
+<section id="faits" class="section-chef">
+  <div class="container-chef columns-chef">
+    <div>
+      <h2>{{ section.settings.title }}</h2>
+      {% if section.settings.subtitle != blank %}<p class="sub">{{ section.settings.subtitle }}</p>{% endif %}
+      <div class="facts-chef">
+        {% for block in section.blocks %}
+          <div class="fact-chef">
+            <h3>{{ block.settings.heading }}</h3>
+            {% if section.blocks.size > 0 %}{% endif %}
+            {% if block.settings.line1 != blank %}<p>{{ block.settings.line1 }}</p>{% endif %}
+            {% if block.settings.line2 != blank %}<p>{{ block.settings.line2 }}</p>{% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <aside class="sticky-chef">
+      <div class="panel-chef">
+        <strong>Dokumente</strong>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+          <a class="btn-chef btn-ghost" href="/files/menu.pdf">Menü (PDF)</a>
+          <a class="btn-chef btn-ghost" href="/files/presentation.pdf">Präsentation (PDF)</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>

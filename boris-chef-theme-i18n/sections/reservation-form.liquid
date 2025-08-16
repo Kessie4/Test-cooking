@@ -1,0 +1,74 @@
+{% schema %}
+{
+  "name":"Reservieren — Formular",
+  "settings":[
+    {"type":"text","id":"title","label":"Titel","default":"Privat-Dinner reservieren"},
+    {"type":"text","id":"subtitle","label":"Untertitel","default":"Antwort innerhalb von 24h. Bitte gewünschtes Datum und Präferenzen angeben."}
+  ],
+  "presets":[{"name":"Reservieren — Formular"}]
+}
+{% endschema %}
+
+<section class="section-chef">
+  <div class="container-chef columns-chef">
+    <div>
+      <h2>{{ section.settings.title }}</h2>
+      {% if section.settings.subtitle != blank %}<p class="sub">{{ section.settings.subtitle }}</p>{% endif %}
+      {%- form 'contact', id: 'ReservationForm' -%}
+        <div style="display:grid;gap:12px">
+          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+            <div>
+              <label>{{ 'reserve.form.name' | t }}</label>
+              <input type="text" name="contact[name]" required placeholder="Max Mustermann">
+            </div>
+            <div>
+              <label>{{ 'reserve.form.email' | t }}</label>
+              <input type="email" name="contact[email]" required placeholder="du@beispiel.ch">
+            </div>
+          </div>
+          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+            <div>
+              <label>{{ 'reserve.form.phone' | t }}</label>
+              <input type="tel" name="contact[phone]" placeholder="+41 ...">
+            </div>
+            <div>
+              <label>{{ 'reserve.form.guests' | t }}</label>
+              <input type="number" min="1" max="20" name="contact[guests]" placeholder="2–10">
+            </div>
+          </div>
+          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
+            <div>
+              <label>{{ 'reserve.form.date' | t }}</label>
+              <input type="date" name="contact[date]">
+            </div>
+            <div>
+              <label>{{ 'reserve.form.time' | t }}</label>
+              <input type="time" name="contact[time]">
+            </div>
+          </div>
+          <div>
+            <label>{{ 'reserve.form.message' | t }}</label>
+            <textarea name="contact[message]" rows="6" placeholder="{{ 'reserve.form.placeholder' | t }}"></textarea>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn-chef" type="submit">{{ 'reserve.form.submit' | t }}</button>
+            <a class="btn-chef btn-ghost" href="https://wa.me/41766205010">{{ 'reserve.form.whatsapp' | t }}</a>
+          </div>
+          {% if form.posted_successfully? %}
+            <p role="status">{{ 'reserve.form.success' | t }}</p>
+          {% elsif form.errors %}
+            <p role="alert">{{ 'reserve.form.error' | t }}</p>
+          {% endif %}
+        </div>
+      {%- endform -%}
+    </div>
+    <aside class="sticky-chef">
+      <div class="panel-chef">
+        <strong>{{ 'reserve.sidebar.title' | t }}</strong>
+        <p style="margin:.4rem 0">📞 <a href="tel:+41766205010">+41 76 620 50 10</a></p>
+        <p style="margin:.4rem 0">📧 <a href="mailto:brou.boris@gmail.com">brou.boris@gmail.com</a></p>
+        <p class="sub">{{ 'reserve.sidebar.areas' | t }}</p>
+      </div>
+    </aside>
+  </div>
+</section>
